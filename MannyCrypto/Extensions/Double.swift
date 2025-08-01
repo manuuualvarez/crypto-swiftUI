@@ -1,8 +1,8 @@
 //
 //  Double.swift
-//  SwiftfulCrypto
+//  MannyCrypto
 //
-//  Created by Nick Sarno on 5/9/21.
+//  Created by Manuel Alvarez on 01/08/2025.
 //
 
 import Foundation

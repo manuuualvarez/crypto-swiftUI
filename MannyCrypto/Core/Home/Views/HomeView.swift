@@ -23,11 +23,20 @@ struct HomeView: View {
     }
 }
 
-#Preview {
+#Preview("Light") {
     NavigationView {
         HomeView()
             .navigationBarHidden(true)
     }
+    .preferredColorScheme(.light)
+}
+
+#Preview("Dark") {
+    NavigationView {
+        HomeView()
+            .navigationBarHidden(true)
+    }
+    .preferredColorScheme(.dark)
 }
 
 
