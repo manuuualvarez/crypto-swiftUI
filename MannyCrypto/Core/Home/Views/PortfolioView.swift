@@ -39,11 +39,11 @@ struct PortfolioView: View {
                     saveButton
                 }
             }
-            .onChange(of: vm.searchText, perform: { value in
-                if value == "" {
+            .onChange(of: vm.searchText) { _, newValue in
+                if newValue == "" {
                     removeSelectedCoin()
                 }
-            })
+            }
         }
     }
 }
@@ -130,7 +130,7 @@ extension PortfolioView {
     
     private func updateSelectedCoin(coin: CoinModel) {
         selectedCoin = coin
-        if let portFolioCoin = vm.portfolioCoins.first { $0.id == coin.id }, let amount = portFolioCoin.currentHoldings {
+        if let portFolioCoin = vm.portfolioCoins.first(where: { $0.id == coin.id }), let amount = portFolioCoin.currentHoldings {
                 quantityText = "\(amount)"
         } else {
             quantityText = ""
@@ -175,3 +175,4 @@ extension PortfolioView {
     PortfolioView()
         .environmentObject(HomeViewModel())
 }
+
