@@ -112,7 +112,7 @@ extension HomeView {
     private var portfolioCoinsList: some View {
         List {
             ForEach(vm.portfolioCoins) { coin in
-                CoinRowView(coin: coin, showHoldingColumn: false)
+                CoinRowView(coin: coin, showHoldingColumn: true)
                     .listRowInsets(
                         .init(
                             top: 10,

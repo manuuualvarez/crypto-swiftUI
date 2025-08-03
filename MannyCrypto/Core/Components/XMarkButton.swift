@@ -8,12 +8,14 @@
 import SwiftUI
 
 struct XMarkButton: View {
-    @Environment(\.presentationMode) var presentationMode
+    let action: () -> Void
+    
+    init(action: @escaping () -> Void = {}) {
+        self.action = action
+    }
     
     var body: some View {
-        Button(action: {
-            presentationMode.wrappedValue.dismiss()
-        }, label: {
+        Button(action: action, label: {
             Image(systemName: "xmark")
                 .font(.headline)
                 .foregroundStyle(Color.theme.myAccent)
