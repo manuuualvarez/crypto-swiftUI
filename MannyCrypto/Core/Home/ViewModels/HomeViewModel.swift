@@ -10,6 +10,8 @@ import Combine
 class HomeViewModel: ObservableObject {
     @Published var allCoins: [CoinModel] = []
     @Published var portfolioCoins: [CoinModel] = []
+    @Published var statics: [StatisticModel] = StatisticModel.mockStatisticData
+    @Published var searchText: String = ""
     
     private let dataService = CoinDataServices()
     
@@ -20,10 +22,27 @@ class HomeViewModel: ObservableObject {
     }
     
     func addSuscribers() {
-        dataService.$allCoins
-            .sink { [weak self] (returnedCoins) in
-                self?.allCoins = returnedCoins
+        $searchText
+            .combineLatest(dataService.$allCoins)
+            // To improve the quickly typing keybord filtering
+            .debounce(for: .seconds(0.5), scheduler: DispatchQueue.main)
+            .map(filterCoins)
+            .sink { [weak self] filterdCoins in
+                self?.allCoins = filterdCoins
             }
             .store(in: &cancellables)
+    }
+    
+    private func filterCoins(text: String, coins: [CoinModel]) -> [CoinModel] {
+        guard !text.isEmpty else {
+            return coins
+        }
+        let lowercasedText = text.lowercased()
+        
+        return coins.filter { (coin) -> Bool in
+            return coin.name.lowercased().contains(lowercasedText)
+            || coin.symbol.lowercased().contains(lowercasedText)
+            || coin.id.lowercased().contains(lowercasedText)
+        }
     }
 }
