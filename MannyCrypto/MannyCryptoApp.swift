@@ -11,6 +11,11 @@ import SwiftUI
 struct MannyCryptoApp: App {
     @StateObject private var vm = HomeViewModel()
     
+    init() {
+        UINavigationBar.appearance().largeTitleTextAttributes = [.foregroundColor: UIColor(Color.theme.myAccent)]
+        UINavigationBar.appearance().titleTextAttributes = [.foregroundColor: UIColor(Color.theme.myAccent)]
+    }
+    
     var body: some Scene {
         WindowGroup {
             NavigationView {
