@@ -123,7 +123,7 @@ struct SparklineIn7D: Codable {
 extension CoinModel {
     
     static let sampleSparkline = SparklineIn7D(price: [
-        54000.0, 55000.0, 56000.0, 57000.0, 58000.0, 59000.0, 60000.0
+        54000.0, 52000.0, 56000.0, 50000.0, 58000.0, 20000.0, 60000.0
     ])
     
     static let mockCoins: [CoinModel] = [
