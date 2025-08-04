@@ -26,10 +26,8 @@ class CoinImageService {
     private func getCoinImage() {
         if let savedImage = fileManager.getImage(imageName: imageName, folderName: .coins_images) {
             self.image = savedImage
-            print("Retrieve image for \(coin.name) from File Manager")
         } else {
             downloadCoinImage()
-            print("Downloading image for \(coin.name) from the API")
         }
     }
     

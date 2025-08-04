@@ -23,6 +23,10 @@ struct CoinRowView: View {
 
         }
         .font(.subheadline)
+        .background(
+            // Used to fix on tap spacer on the row, and make the whole row clickeable
+            Color.theme.myBackground.opacity(0.001)
+        )
     }
 }
 
