@@ -22,6 +22,7 @@ struct MannyCryptoApp: App {
                 HomeView()
                     .navigationBarHidden(true)
             }
+            .navigationViewStyle(StackNavigationViewStyle())
             .environmentObject(vm)
         }
     }
