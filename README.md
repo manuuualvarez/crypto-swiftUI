@@ -12,6 +12,14 @@
 
 </div>
 
+## 📱 Demo:
+
+<img width="1320" height="2868" alt="Simulator Screenshot - iPhone 16 Pro Max - 2025-08-04 at 01 56 34" src="https://github.com/user-attachments/assets/646ec7e4-63c3-4cdd-9e9a-b3dd40318800" />
+<img width="1320" height="2868" alt="Simulator Screenshot - iPhone 16 Pro Max - 2025-08-04 at 01 56 54" src="https://github.com/user-attachments/assets/4ec80acb-6c2d-4989-9521-e5a1b6692082" />
+<img width="1320" height="2868" alt="Simulator Screenshot - iPhone 16 Pro Max - 2025-08-04 at 01 57 14" src="https://github.com/user-attachments/assets/3bc22b6c-2203-4828-b6cd-64a3b2a14af1" />
+<img width="1320" height="2868" alt="Simulator Screenshot - iPhone 16 Pro Max - 2025-08-04 at 01 57 42" src="https://github.com/user-attachments/assets/d2e0b050-b2a6-4a12-b34a-8306ca9985e6" />
+
+
 ## 🚀 Overview
 
 MannyCrypto is a sophisticated iOS application that provides cryptocurrency market data and portfolio management capabilities. This project demonstrates advanced iOS development skills using modern frameworks and architectural patterns.
